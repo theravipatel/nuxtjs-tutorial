@@ -1,36 +1,36 @@
 <template>
   <div>
     <Header></Header>
-    <h1>Home Page</h1>
+    <h1>Contact Us Page</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'ContactUsPage',
   head() {
     return {
-      title: 'Home | Nuxt-Js Tutorial',
+      title: 'Contact Us | Nuxt-Js Tutorial',
       meta: [
         {
-          title: 'Home | Nuxt-Js Tutorial',
+          title: 'Contact Us | Nuxt-Js Tutorial',
           name: 'description',
-          content: 'Home | Nuxt-Js Tutorial'
+          content: 'Contact Us | Nuxt-Js Tutorial'
         },
         {
           hid: 'description',
           name: 'description',
-          content: 'Home page description | Nuxt-Js Tutorial'
+          content: 'Contact Us page description | Nuxt-Js Tutorial'
         },
         {
           hid: 'og:title',
           name: 'og:title',
-          content: 'Home | Nuxt-Js Tutorial'
+          content: 'Contact Us | Nuxt-Js Tutorial'
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: 'Home page description | Nuxt-Js Tutorial'
+          content: 'Contact Us page description | Nuxt-Js Tutorial'
         }
       ]
     }

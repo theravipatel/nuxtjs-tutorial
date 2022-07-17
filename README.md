@@ -22,6 +22,84 @@ $ npm run start
 $ npm run generate
 ```
 
+## 3) Routing 
+- Create new page in 'pages' directory and run url with pagename i.e. http://localhost:3000/about
+- When new page created, route automatically define in '.nuxt\router.js' so no need to manually define route like vuejs
+- In 'components' directory, we can define common layout i.e. header.vue which we use in any pages by just adding component's name as a tag i.e. <Header />. No need to write 'import header from...' 
+
+## 4) Dynamic Routing 
+- For dynamic routing, we can create sub folder in 'pages' directory i.e. 'pages/blog' and in that directory, create new index.vue file for listing purpose and for dynamic routing, create new file with '_pagename.vue' i.e. '/pages/blog/_id.vue'
+- In mounted() method, we can get url parameters by using this.$route
+
+```
+<template>
+  <div>
+    <Header></Header>
+    <h1>Blog Detail Page</h1>
+    <h5><b>Blog Id: {{ id }}</b></h5>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'BlogDetailPage',
+  data() {
+    return {
+      id: ''
+    }
+  },
+  mounted() {
+    console.log(this.$route);
+    this.id = this.$route.params.id;
+  }
+}
+</script>
+```
+
+
+## 5) Head Method, Title, Seo meta title & description
+- To change title, meta data; use head() method
+```
+<template>
+  <div>
+    <Header></Header>
+    <h1>Home Page</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'IndexPage',
+  head() {
+    return {
+      title: 'Home | Nuxt-Js Tutorial',
+      meta: [
+        {
+          title: 'Home | Nuxt-Js Tutorial',
+          name: 'description',
+          content: 'Home | Nuxt-Js Tutorial'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Home page description | Nuxt-Js Tutorial'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Home | Nuxt-Js Tutorial'
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'Home page description | Nuxt-Js Tutorial'
+        }
+      ]
+    }
+  }
+}
+</script>
+```
 
 
 
