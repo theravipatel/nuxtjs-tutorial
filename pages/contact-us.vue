@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <h1>Contact Us Page</h1>
   </div>
 </template>

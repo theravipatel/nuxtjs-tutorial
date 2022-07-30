@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <h1>Blog Page</h1>
     <ol>
       <li>

@@ -101,6 +101,17 @@ export default {
 </script>
 ```
 
+## Default Layout
+- Create 'app.html' file in root directory which will work as default index page of the app. Note app.html file should be same as '.nuxt\views\app.template.html' in terms of attributes.
+- Create 'layouts' folder in root and add 'default.vue' file for setting defult layout of the app. Note: make sure to add "<Nuxt />" tag in the layout file so pages content will load there. 
+```
+<template>
+    <div>
+       <Header></Header>
+       <Nuxt /> 
+    </div>
+</template>
+```
 
 
 ## Documentation

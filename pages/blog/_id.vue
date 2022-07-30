@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <h1>Blog Detail Page</h1>
     <h5><b>Blog Id: {{ id }}</b></h5>
   </div>
