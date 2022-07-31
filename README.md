@@ -113,6 +113,16 @@ export default {
 </template>
 ```
 
+## Multiple Layout
+-- Create Multiple layout files as per requirement in layout folder and set it as page's layout as per below. By default 'default.vue' is set as layout.
+```
+<script>
+export default {
+  name: 'NewPage',
+  layout: 'Layout1',
+}
+</script>
+```
 
 ## Documentation
 

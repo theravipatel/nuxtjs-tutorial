@@ -1,6 +1,6 @@
 <template>
 <div>
-    <p>--------------Default Layout--------------</p>
+    <p>--------------Layout 1--------------</p>
     <Header></Header>
     <Nuxt />
 </div>
