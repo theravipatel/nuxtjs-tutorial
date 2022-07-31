@@ -1,4 +1,6 @@
 # Nuxt Js Tutorial
+## A) Ref. - Nuxt Intro - https://www.smashingmagazine.com/2020/04/getting-started-nuxt/
+## B) Ref. - Nuxt Directories - https://nuxtjs.org/docs/directory-structure/
 
 ## 1) Create app
 ```
@@ -159,6 +161,108 @@ export default {
 </template>
 ```
 
+## Middleware
+- Ref. : (https://nuxtjs.org/docs/directory-structure/middleware/)
+- The middleware directory contains your application middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layout).
+- Three type of middleware: Router Middleware, Named Middleware, Anonymous Middleware
+
+
+## Router Middleware
+- This will be act as global middleware apply to all router and can be define as below.
+- middleware/router_middleware.js
+```
+export default function ({ route }) { //export default function (context) {
+  console.log("Router Middleware called");
+}
+```
+
+- Then, in your nuxt.config.js, use the router.middleware key.
+```
+router: {
+  middleware: 'router_middleware'
+}
+```
+
+## Named Middleware 
+- This will be apply to only in page where it added by its name.
+- middleware/named_middleware.js
+```
+export default function ({ store, redirect }) { //export default function (context) {
+  console.log("Named Middleware called");
+}
+```
+
+- Then, in your vue page,
+- pages/NewPage.vue
+```
+<template>
+  <h1>New Page</h1>
+</template>
+
+<script>
+  export default {
+    middleware: 'named_middleware'
+  }
+</script>
+```
+
+## Anonymous Middleware
+- This can be define as a function in the page where it is required. So no need to create JS file for it in Middleware file.
+- pages/NewPage.vue
+```
+<template>
+  <h1>New Page</h1>
+</template>
+
+<script>
+  export default {
+    middleware({ store, redirect }) {
+      console.log("Anonymous Middleware called");
+    }
+  }
+</script>
+```
+
+## Module
+- 
+## .env Module
+- Install dotenv module
+```
+npm i @nuxtjs/dotenv
+```
+
+- To add dotenv module in nuxt.config.js, 
+
+- Mehtod 1) Add '@nuxtjs/dotenv' in nuxt.config.js file in modules array and restart app
+```
+modules: [
+  '@nuxtjs/axios',
+  '@nuxtjs/dotenv'
+]
+```
+
+- Mehtod 2) Add '@nuxtjs/dotenv' in nuxt.config.js file in modules array with default filename and restart app
+```
+modules: [
+  '@nuxtjs/axios',
+  ['@nuxtjs/dotenv', { filename: '.env.prod' }]
+]
+```
+
+- Create .env file in root and add variables
+```
+SECRETE_KEY=ABCD123
+SITE_URL=https://www.google.com/
+```
+
+- In any page, use it as below
+```
+export default {
+  mounted() {
+    console.log(".env file:",process.env.SECRETE_KEY);
+  }
+}
+```
 
 
 

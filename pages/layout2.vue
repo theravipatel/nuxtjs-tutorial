@@ -10,7 +10,7 @@ export default {
   layout: 'Layout2',
   head() {
     return {
-      title: 'Layout2 | Nuxt-Js Tutorial',
+      title: 'Layout2 | Nuxt-Js Tutorial | '+ process.env.SITE_NAME,
       meta: [
         {
           title: 'Layout2 | Nuxt-Js Tutorial',

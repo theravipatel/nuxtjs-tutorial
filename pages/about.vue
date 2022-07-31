@@ -7,9 +7,10 @@
 <script>
 export default {
   name: 'AboutPage',
+  middleware: ['named_middleware'],
   head() {
     return {
-      title: 'About | Nuxt-Js Tutorial',
+      title: 'About | Nuxt-Js Tutorial | '+ process.env.SITE_NAME,
       meta: [
         {
           title: 'About | Nuxt-Js Tutorial',

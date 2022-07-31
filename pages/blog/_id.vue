@@ -19,7 +19,7 @@ export default {
   },
   head() {
     return {
-      title: 'Blog Title '+ this.id +' | Nuxt-Js Tutorial',
+      title: 'Blog Title '+ this.id +' | Nuxt-Js Tutorial | '+ process.env.SITE_NAME,
       meta: [
         {
           title: 'Blog Title '+ this.id +' | Nuxt-Js Tutorial',

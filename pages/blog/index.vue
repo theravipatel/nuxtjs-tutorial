@@ -20,7 +20,7 @@ export default {
   name: 'BlogPage',
   head() {
     return {
-      title: 'Blog | Nuxt-Js Tutorial',
+      title: 'Blog | Nuxt-Js Tutorial | '+ process.env.SITE_NAME,
       meta: [
         {
           title: 'Blog | Nuxt-Js Tutorial',

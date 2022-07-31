@@ -9,7 +9,7 @@ export default {
   name: 'IndexPage',
   head() {
     return {
-      title: 'Home | Nuxt-Js Tutorial',
+      title: 'Home | Nuxt-Js Tutorial | '+ process.env.SITE_NAME,
       meta: [
         {
           title: 'Home | Nuxt-Js Tutorial',
@@ -33,6 +33,9 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    console.log("App Environment is : ",process.env.APP_ENV);
   }
 }
 </script>

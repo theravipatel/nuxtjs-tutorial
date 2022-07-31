@@ -7,9 +7,12 @@
 <script>
 export default {
   name: 'ContactUsPage',
+  middleware({ store, redirect }) {
+    console.log("Anonymous Middleware called");
+  },
   head() {
     return {
-      title: 'Contact Us | Nuxt-Js Tutorial',
+      title: 'Contact Us | Nuxt-Js Tutorial | '+ process.env.SITE_NAME,
       meta: [
         {
           title: 'Contact Us | Nuxt-Js Tutorial',

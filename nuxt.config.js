@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -35,7 +37,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    //'@nuxtjs/dotenv'
+    ['@nuxtjs/dotenv', { filename: '.env.prod' }],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -53,5 +57,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  router: {
+    middleware: ['router_middleware']
   }
 }
