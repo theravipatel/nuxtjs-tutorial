@@ -114,7 +114,7 @@ export default {
 ```
 
 ## Multiple Layout
--- Create Multiple layout files as per requirement in layout folder and set it as page's layout as per below. By default 'default.vue' is set as layout.
+- Create Multiple layout files as per requirement in layout folder and set it as page's layout as per below. By default 'default.vue' is set as layout.
 ```
 <script>
 export default {
@@ -123,6 +123,44 @@ export default {
 }
 </script>
 ```
+
+## Error Page
+- Create 'error.vue' in layout folder which will work as default error page. Define error layout in same layout folder to change design if required.
+- layouts/error.vue
+```
+<template>
+<div>
+    <h1>Page Not Found</h1>
+    <h5>Error: {{ error }}</h5>
+</div>
+</template>
+<script>
+export default {
+  name: 'ErrorPage',
+  layout: 'ErrorLayout',
+  props: {
+    error: {
+        type: Object,
+        default: null,
+    }
+  }
+}
+</script>
+
+```
+
+- layouts/ErrorLayout.vue
+```
+<template>
+<div>
+    <Header></Header>
+    <Nuxt />
+</div>
+</template>
+```
+
+
+
 
 ## Documentation
 
